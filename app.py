@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import tim
+import thimo
 
 app = Flask(__name__)
 
@@ -18,3 +19,7 @@ def hello_world3():
     name = "Tim"
     lastName = "Dragstra"
     return render_template('index.html', name=name, lastName = lastName)
+    
+@app.route("/thimo/<id>")
+def thimo_route(id):
+    return thimo.movie(id)
