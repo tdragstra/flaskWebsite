@@ -3,7 +3,12 @@ import tmdbsimple as tmdb
 tmdb.API_KEY = '7c5af9912d5af10f2663e9d2092f207b'
 
 def movie(id):
-  movie = tmdb.Movies(id).info()
+  movie = None
+
+  try:
+    movie = tmdb.Movies(id).info()
+  except:
+    return "<h1>Movie not found</h1>"
 
   return f"""
   <div>
