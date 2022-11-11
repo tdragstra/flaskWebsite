@@ -26,4 +26,4 @@ def romanToInt(s):
 
         prev = i
 
-    return sum(ans)
+    return str(sum(ans))

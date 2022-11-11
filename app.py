@@ -1,6 +1,11 @@
 from flask import Flask
 import tim
 
+import thimo
+import tyme
+import an
+
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -13,4 +18,21 @@ def hello_world1():
 
 @app.route("/tim")
 def hello_world3():
-    return tim.helloTim()
+    if request.method == 'POST':
+        age = request.form['age']
+    name = "Tim"
+    lastName = "Dragstra"
+    return render_template('index.html', name=name, lastName = lastName)
+    
+@app.route("/thimo/<id>")
+def thimo_route(id):
+    return thimo.movie(id)
+
+@app.route("/tyme")
+def schrikkeljaar():
+    return tyme.schrikkeljaar(2000)
+
+@app.route("/an")
+def romanToInt():
+    return an.romanToInt('XX')
+
