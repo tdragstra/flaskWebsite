@@ -1,5 +1,6 @@
 from flask import Flask
 import tim
+import thimo
 
 app = Flask(__name__)
 
@@ -14,3 +15,8 @@ def hello_world1():
 @app.route("/tim")
 def hello_world3():
     return tim.helloTim()
+
+@app.route("/thimo/<id>")
+def thimo_route(id):
+    # 75174
+    return thimo.movie(id)
