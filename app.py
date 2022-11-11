@@ -18,5 +18,4 @@ def hello_world3():
 
 @app.route("/thimo/<id>")
 def thimo_route(id):
-    # 75174
     return thimo.movie(id)
