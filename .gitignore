@@ -1,1 +1,2 @@
+# Don't track pycache folder
 __pycache__/
